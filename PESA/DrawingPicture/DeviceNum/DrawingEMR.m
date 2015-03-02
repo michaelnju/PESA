@@ -1,0 +1,20 @@
+p_pe= load('C:\Users\michaelnju\Desktop\ทยีๆ_final_1_0724_2113\result_data\PESA_EMR_differ_final.mat');
+y_pe=p_pe.utility_charger_differ;
+p_ra=load('C:\Users\michaelnju\Desktop\ทยีๆ_final_1_0724_2113\result_data\Random_EMR_differ_final.mat');
+y_ra=p_ra.utility_charger_differ;
+p_tr=load('C:\Users\michaelnju\Desktop\ทยีๆ_final_1_0724_2113\result_data\TriAngle_EMR_differ_final.mat');
+y_tri=p_tr.utility_charger_differ;
+x=p_pe.Rt_set;
+plot(x,y_pe,'-b.',x,y_ra,'-g*',x,y_tri,'-r+');
+
+str1='\fontsize {16}\fontname {Helvetica}PESA';
+str2='\fontsize {16}\fontname {Helvetica}Random';
+str3='\fontsize {16}\fontname {Helvetica}Triangle';
+hleg=legend(str1,str2,str3);
+set(hleg,'Location','SouthEast');
+hold on;
+set(gca,'FontSize',16);
+fh=figure(1);
+set(fh, 'color', 'white'); 
+xlabel('\fontsize {16}\fontname {Helvetica}The EMR Value');
+ylabel('\fontsize {16}\fontname {Helvetica} Utility');
